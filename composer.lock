@@ -1,5 +1,5 @@
 {
-    "hash": "60f09c83d9f0891b51ac51941970dcd5",
+    "hash": "c7e41973d16378b35cf4d16f905da653",
     "packages": [
         {
             "package": "doctrine/common",
@@ -12,7 +12,7 @@
         {
             "package": "doctrine/doctrine-bundle",
             "version": "dev-master",
-            "source-reference": "9c8cdd383be8d8a9fd8113289cd36e3453c81e1c"
+            "source-reference": "342c7dd0a1bfe9a1156a190a303b8bea49fdd4fb"
         },
         {
             "package": "doctrine/orm",
@@ -56,6 +56,11 @@
             "version": "1.1.0"
         },
         {
+            "package": "noiselabs/smarty-bundle",
+            "version": "dev-master",
+            "source-reference": "7defbc707e5f93f1019299510dab0b07ef124295"
+        },
+        {
             "package": "sensio/distribution-bundle",
             "version": "dev-master",
             "source-reference": "77b7e8fabfb47ab81014759e59dd82f56f6c62f9"
@@ -68,7 +73,7 @@
         {
             "package": "sensio/generator-bundle",
             "version": "dev-master",
-            "source-reference": "d570af6edd06f546f4f301300396c543aedc7f26"
+            "source-reference": "423f505811307185eeea38a0a396bede32713497"
         },
         {
             "package": "swiftmailer/swiftmailer",
@@ -95,14 +100,21 @@
         {
             "package": "symfony/swiftmailer-bridge",
             "version": "dev-master",
-            "source-reference": "463536de4b149e1560bd764582cbf50dc9936ebd",
+            "source-reference": "509901cb13f43a6319a55804f787d206aa649ab4",
             "alias-pretty-version": "2.1.x-dev",
             "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/swiftmailer-bridge",
             "version": "dev-master",
-            "source-reference": "463536de4b149e1560bd764582cbf50dc9936ebd"
+            "source-reference": "509901cb13f43a6319a55804f787d206aa649ab4"
+        },
+        {
+            "package": "symfony/swiftmailer-bridge",
+            "version": "dev-master",
+            "source-reference": "463536de4b149e1560bd764582cbf50dc9936ebd",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/swiftmailer-bundle",
@@ -112,14 +124,21 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "f9aa6f7d1e8ec4298db7572dfc3c8aa32201043b"
+            "source-reference": "f9aa6f7d1e8ec4298db7572dfc3c8aa32201043b",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "f9aa6f7d1e8ec4298db7572dfc3c8aa32201043b",
+            "source-reference": "46ffbd528282f09fd8d23419d549b38dd877127c",
             "alias-pretty-version": "2.1.x-dev",
             "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony/symfony",
+            "version": "dev-master",
+            "source-reference": "46ffbd528282f09fd8d23419d549b38dd877127c"
         },
         {
             "package": "twig/extensions",
@@ -129,12 +148,19 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "078905ed9507808b260d34fd8928e79e3a600d1d"
+            "source-reference": "078905ed9507808b260d34fd8928e79e3a600d1d",
+            "alias-pretty-version": "1.9.x-dev",
+            "alias-version": "1.9.9999999.9999999-dev"
         },
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "078905ed9507808b260d34fd8928e79e3a600d1d",
+            "source-reference": "d661c2a2f654ba8f2bddeeac0b8a80dcd59649ab"
+        },
+        {
+            "package": "twig/twig",
+            "version": "dev-master",
+            "source-reference": "d661c2a2f654ba8f2bddeeac0b8a80dcd59649ab",
             "alias-pretty-version": "1.9.x-dev",
             "alias-version": "1.9.9999999.9999999-dev"
         }

@@ -1,0 +1,149 @@
+#!/usr/bin/env php
+<?php
+/**
+ * @category NoiseLabs
+ * @package WebsiteBundle
+ * @author Vítor Brandão <noisebleed@noiselabs.org>
+ * @copyright 2012 Vítor Brandão
+ */
+
+set_time_limit(0);
+
+// Bash colors
+$bc = array(
+	'txtblk' => "\033[0;30m", # Black - Regular
+	'txtred' => "\033[0;31m", # Red
+	'txtgrn' => "\033[0;32m", # Green
+	'txtylw' => "\033[0;33m", # Yellow
+	'txtblu' => "\033[0;34m", # Blue
+	'txtpur' => "\033[0;35m", # Purple
+	'txtcyn' => "\033[0;36m", # Cyan
+	'txtwht' => "\033[0;37m", # White
+	'bldblk' => "\033[1;30m", # Black - Bold
+	'bldred' => "\033[1;31m", # Red
+	'bldgrn' => "\033[1;32m", # Green
+	'bldylw' => "\033[1;33m", # Yellow
+	'bldblu' => "\033[1;34m", # Blue
+	'bldpur' => "\033[1;35m", # Purple
+	'bldcyn' => "\033[1;36m", # Cyan
+	'bldwht' => "\033[1;37m", # White
+	'unkblk' => "\033[4;30m", # Black - Underline
+	'undred' => "\033[4;31m", # Red
+	'undgrn' => "\033[4;32m", # Green
+	'undylw' => "\033[4;33m", # Yellow
+	'undblu' => "\033[4;34m", # Blue
+	'undpur' => "\033[4;35m", # Purple
+	'undcyn' => "\033[4;36m", # Cyan
+	'undwht' => "\033[4;37m", # White
+	'bakblk' => "\033[40m",   # Black - Background
+	'bakred' => "\033[41m",   # Red
+	'badgrn' => "\033[42m",   # Green
+	'bakylw' => "\033[43m",   # Yellow
+	'bakblu' => "\033[44m",   # Blue
+	'bakpur' => "\033[45m",   # Purple
+	'bakcyn' => "\033[46m",   # Cyan
+	'bakwht' => "\033[47m",   # White
+	'txtrst' => "\033[0m"     # Text Reset
+);
+
+function eprint($color, $message, $bullet='*') {
+	global $bc;
+	echo sprintf("%s%s%s%s", $bc[$color], $bullet, $message, $bc['txtrst']);
+}
+
+function einfo($message, $bullet='* ') {
+	eprint('txtgrn', $message, $bullet);
+}
+
+function ewarn($message, $bullet='* ') {
+	eprint('txtylw', $message, $bullet);
+}
+
+function ewarnH($message, $bullet='* ') {
+	eprint('bldylw', $message, $bullet);
+}
+
+function eerror($message, $bullet='* ') {
+	eprint('txtred', $message, $bullet);
+}
+
+function eheader($fancy = false)
+{
+	global $bc;
+	echo sprintf("%s  %s%s  Clears the application cache\n\n", $bc['bldblu'], basename(__FILE__), $bc['txtrst']);
+}
+
+function setperms($directory, $uid, $gid, $perms) {
+	system(sprintf("chmod %o %s", $perms, $directory));
+	system(sprintf("sudo chown -R %d:%d %s", $uid, $gid, $directory));
+}
+
+echo "\n";
+eheader();
+
+$uid = posix_getuid();
+
+foreach (array('apache', 'www-data') as $gname) {
+	if (is_array($ginfo = posix_getgrnam($gname))) {
+		break;
+	}
+}
+
+if (!$ginfo) {
+	eerror("Failed to lookup Apache group name.");
+	exit(1);
+}
+$gid = $ginfo['gid'];
+
+system("sudo true");
+
+$dir = __DIR__.'/cache';
+if (is_dir($dir)) {
+	einfo("Removing cache directory...");
+	system("sudo rm -rf $dir");
+	einfo(" OK.\n", '');
+}
+
+$dirsToCreate = array('cache');
+foreach (array('dev', 'prod') as $env) {
+    $dirsToCreate = array_merge($dirsToCreate, array(
+        "cache/$env",
+        "cache/$env/annotations",
+        "cache/$env/security",
+        "cache/$env/smarty",
+        "cache/$env/smarty/templates_c"
+    ));
+}
+
+foreach ($dirsToCreate as $ldir) {
+	$dir = __DIR__.'/'.$ldir;
+	system("mkdir -p $dir");
+	einfo("Creating directory '$ldir'...");
+	setperms($dir, $uid, $gid, 0775);
+	einfo(" OK.\n", '');
+}
+
+$dir = __DIR__.'/logs';
+if (!is_dir($dir)) {
+	einfo("Creating 'logs' dir...");
+	system("mkdir -p $dir");
+	einfo(" OK.\n", '');
+	$checkLogs = true;
+}
+else {
+	$checkLogs = true;
+}
+setperms($dir, $uid, $gid, 0775);
+
+if ($checkLogs) {
+	foreach (array('dev.log', 'prod.log', 'test.log') as $log) {
+		$file = $dir.'/'.$log;
+		if (file_exists($file)) {
+			einfo("Fixing 'logs/$log' permissions...");
+			setperms($file, $uid, $gid, 0664);
+			einfo(" OK.\n", '');
+		}
+	}
+}
+
+?>

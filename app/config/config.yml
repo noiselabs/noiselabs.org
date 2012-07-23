@@ -12,7 +12,7 @@ framework:
     form:            true
     csrf_protection: true
     validation:      { enable_annotations: true }
-    templating:      { engines: ['twig', 'smarty'] } #assets_version: SomeVersionScheme
+    templating:      { engines: ['smarty', 'twig'] } #assets_version: SomeVersionScheme
     default_locale:  %locale%
     trust_proxy_headers: false # Should Request object should trust proxy headers (X_FORWARDED_FOR/HTTP_CLIENT_IP)
     session:         ~
@@ -26,7 +26,7 @@ twig:
 assetic:
     debug:          %kernel.debug%
     use_controller: false
-    bundles:        [ ]
+    bundles:        [ NoiseLabsWebsiteBundle ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~

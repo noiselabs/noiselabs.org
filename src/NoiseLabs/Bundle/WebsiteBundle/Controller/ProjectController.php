@@ -7,16 +7,18 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 /**
+ * @Route("/projects")
+ *
  * @author Vítor Brandão <noisebleed@noiselabs.org>
  */
-class HomeController extends Controller
+class ProjectController extends Controller
 {
     /**
-     * @Route("/", name="home")
-     * @Template("NoiseLabsWebsiteBundle:Home:index.html.smarty")
+     * @Route("/", name="projects")
+     * @Template()
      */
-    public function indexAction()
+    public function indexAction($name)
     {
-        return array();
+        return array('name' => $name);
     }
 }

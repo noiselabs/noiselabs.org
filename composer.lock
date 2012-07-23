@@ -1,5 +1,5 @@
 {
-    "hash": "4eb27ae190f3f2d79b9e8a6c25d170b1",
+    "hash": "991f47995bea5f0e5dff1147e34053d1",
     "packages": [
         {
             "package": "doctrine/common",
@@ -44,6 +44,36 @@
             "version": "1.1.0"
         },
         {
+            "package": "knplabs/knp-components",
+            "version": "dev-master",
+            "source-reference": "99ea408dc2a7c3616e688ffe67e3248ece69ff0e",
+            "commit-date": "1339767068"
+        },
+        {
+            "package": "knplabs/knp-menu",
+            "version": "dev-master",
+            "alias-pretty-version": "2.0.x-dev",
+            "alias-version": "2.0.9999999.9999999-dev"
+        },
+        {
+            "package": "knplabs/knp-menu",
+            "version": "dev-master",
+            "source-reference": "418788056ba5b95f4a2717ba5b4d4ab078aca4ab",
+            "commit-date": "1340209324"
+        },
+        {
+            "package": "knplabs/knp-menu-bundle",
+            "version": "dev-master",
+            "source-reference": "ba1ff625e4b34131106e12ee475eb6397eb5a758",
+            "commit-date": "1341324163"
+        },
+        {
+            "package": "knplabs/knp-paginator-bundle",
+            "version": "dev-master",
+            "source-reference": "427db8350ae57659645ba35480bbe1194c1c695f",
+            "commit-date": "1339165136"
+        },
+        {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
             "alias-pretty-version": "1.1.x-dev",
@@ -58,6 +88,18 @@
         {
             "package": "monolog/monolog",
             "version": "1.1.0"
+        },
+        {
+            "package": "mopa/bootstrap-bundle",
+            "version": "dev-master",
+            "source-reference": "85ff8e83ab4f2a3ef831ee8fb503368d893d6452",
+            "commit-date": "1342177971"
+        },
+        {
+            "package": "mopa/composer-bridge",
+            "version": "dev-master",
+            "source-reference": "84b8bf537163b4470f14d02554a0e9eb5d300172",
+            "commit-date": "1337596733"
         },
         {
             "package": "noiselabs/smarty-bundle",
@@ -127,8 +169,14 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "9f157a1616b343a36f6e2c4ac944229163feb546",
-            "commit-date": "1342776908"
+            "source-reference": "c20c1d18dc0b588e10a8fab24264441f0e4a3e7c",
+            "commit-date": "1342944184"
+        },
+        {
+            "package": "thomas-mcdonald/bootstrap-sass",
+            "version": "dev-master",
+            "source-reference": "master",
+            "commit-date": "1340745807"
         },
         {
             "package": "twig/extensions",
@@ -145,8 +193,14 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "8a84838798e45424c5fe2d87149db6855ae037bf",
-            "commit-date": "1342788098"
+            "source-reference": "657de7bdeb680815e0df95f63da9f81e1533d2ea",
+            "commit-date": "1342953178"
+        },
+        {
+            "package": "twitter/bootstrap",
+            "version": "master",
+            "source-reference": "master",
+            "commit-date": "1339090286"
         }
     ],
     "packages-dev": null,
@@ -163,6 +217,10 @@
         "sensio/distribution-bundle": 20,
         "sensio/framework-extra-bundle": 20,
         "sensio/generator-bundle": 20,
-        "noiselabs/smarty-bundle": 20
+        "noiselabs/smarty-bundle": 20,
+        "mopa/bootstrap-bundle": 20,
+        "knplabs/knp-paginator-bundle": 20,
+        "knplabs/knp-menu-bundle": 20,
+        "thomas-mcdonald/bootstrap-sass": 20
     }
 }

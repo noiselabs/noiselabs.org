@@ -111,7 +111,8 @@ foreach (array('dev', 'prod') as $env) {
         "cache/$env/annotations",
         "cache/$env/security",
         "cache/$env/smarty",
-        "cache/$env/smarty/templates_c"
+        "cache/$env/smarty/templates_c",
+        "cache/$env/jms_diextra/metadata"
     ));
 }
 

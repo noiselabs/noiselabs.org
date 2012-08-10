@@ -1,0 +1,1 @@
+{extends 'file:SmartyBundle:Bootstrap:base.html.smarty'}

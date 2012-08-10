@@ -1,1 +1,2 @@
 {extends 'file:NoiseLabsWebsiteBundle::layout.html.smarty'}
+{block content}x{/block}

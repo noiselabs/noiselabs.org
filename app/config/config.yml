@@ -22,6 +22,16 @@ twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
 
+# Smarty Configuration
+smarty:
+    bootstrap: true
+
+# MopaBootstrap Configuration
+mopa_bootstrap:
+    navbar:
+        template: SmartyBundle:Bootstrap:Navbar:navbar.html.smarty
+    
+    
 # Assetic Configuration
 assetic:
     debug:          %kernel.debug%

@@ -21,8 +21,10 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new NoiseLabs\Bundle\SmartyBundle\SmartyBundle(),
             new NoiseLabs\Bundle\WebsiteBundle\NoiseLabsWebsiteBundle(),
-            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
+            new Mopa\Bundle\BootstrapSandboxBundle\MopaBootstrapSandboxBundle(),
+            new Liip\ThemeBundle\LiipThemeBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle()
         );
 

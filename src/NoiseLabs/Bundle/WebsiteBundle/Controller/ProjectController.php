@@ -16,7 +16,7 @@
  * License along with NoiseLabs-WebsiteBundle; if not, see
  * <http://www.gnu.org/licenses/>.
  *
- * Copyright (C) 2011 Vítor Brandão
+ * Copyright (C) 2012 Vítor Brandão
  *
  * @category    NoiseLabs
  * @package     WebsiteBundle

@@ -41,7 +41,7 @@ class HomeController extends Controller
      * @Template(engine="smarty")
      */
     public function indexAction()
-    {
+    {       
         return array();
     }
 }

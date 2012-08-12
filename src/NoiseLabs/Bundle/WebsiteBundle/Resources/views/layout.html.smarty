@@ -1,2 +1,3 @@
 {extends 'file:SmartyBundle:Bootstrap:base.html.smarty'}
 {block title}Welcome to noiselabs.org!{/block}
+{block head_style}<link href="{'bundles/noiselabswebsite/css/f1e3c9a.css'|asset}" type="text/css" rel="stylesheet" media="screen" />{/block}

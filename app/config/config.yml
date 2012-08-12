@@ -25,11 +25,13 @@ twig:
 # Smarty Configuration
 smarty:
     bootstrap: true
+    options:
+        trim_whitespace: false
 
 # MopaBootstrap Configuration
 mopa_bootstrap:
     navbar:
-        template: SmartyBundle:Bootstrap:Navbar:navbar.html.smarty
+        template: SmartyBundle:Bootstrap:navbar.html.smarty
     
     
 # Assetic Configuration
